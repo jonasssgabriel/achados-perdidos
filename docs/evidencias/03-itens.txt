@@ -1,0 +1,1 @@
+[{"criado_em":"2026-10-19T18:26:27.122173","descricao":"Garrafa termica azul","foto":null,"id":1,"local":"Biblioteca"},{"criado_em":"2026-10-19T18:26:27.122173","descricao":"Carregador de notebook USB-C","foto":null,"id":2,"local":"Laboratorio 3"},{"criado_em":"2026-10-19T18:26:27.122173","descricao":"Casaco preto com capuz","foto":null,"id":3,"local":"Cantina"}]

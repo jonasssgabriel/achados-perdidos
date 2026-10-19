@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Persistência dos dados</title>
+  <desc id="d">Antes: 5 itens e 2 fotos. Depois de down e up: 5 itens e 2 fotos. Depois de down -v e up: 3 itens e 0 fotos.</desc>
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9198a1"/></marker></defs>
+  <rect width="1000" height="360" rx="16" fill="#0d1117"/>
+  <text x="500" y="40" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#9198a1">O QUE SOBREVIVE A CADA COMANDO (MEDIDO COM /estatisticas)</text>
+  
+  <rect x="30" y="70" width="270" height="250" rx="14" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="165" y="106" text-anchor="middle" font-size="15" font-weight="800" fill="#e6edf3">Antes</text>
+  <text x="165" y="130" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">2 itens cadastrados com foto</text>
+  <text x="98" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#3fb950">5</text>
+  <text x="98" y="218" text-anchor="middle" font-size="12" fill="#9198a1">itens no banco</text>
+  <text x="232" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#3fb950">2</text>
+  <text x="232" y="218" text-anchor="middle" font-size="12" fill="#9198a1">fotos no volume</text>
+  <text x="165" y="262" text-anchor="middle" font-size="12" fill="#e6edf3">3 do init.sql + 2 cadastrados</text>
+  <text x="165" y="282" text-anchor="middle" font-size="12" fill="#e6edf3">estado de partida</text>
+  
+  <rect x="365" y="70" width="270" height="250" rx="14" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="500" y="106" text-anchor="middle" font-size="15" font-weight="800" fill="#e6edf3">Depois de down + up</text>
+  <text x="500" y="130" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">docker compose down / up -d</text>
+  <text x="433" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#3fb950">5</text>
+  <text x="433" y="218" text-anchor="middle" font-size="12" fill="#9198a1">itens no banco</text>
+  <text x="567" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#3fb950">2</text>
+  <text x="567" y="218" text-anchor="middle" font-size="12" fill="#9198a1">fotos no volume</text>
+  <text x="500" y="262" text-anchor="middle" font-size="12" fill="#e6edf3">contêineres recriados</text>
+  <text x="500" y="282" text-anchor="middle" font-size="12" fill="#e6edf3">volumes mantidos</text>
+  
+  <rect x="700" y="70" width="270" height="250" rx="14" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+  <text x="835" y="106" text-anchor="middle" font-size="15" font-weight="800" fill="#e6edf3">Depois de down -v + up</text>
+  <text x="835" y="130" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">docker compose down -v / up -d</text>
+  <text x="768" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#f85149">3</text>
+  <text x="768" y="218" text-anchor="middle" font-size="12" fill="#9198a1">itens no banco</text>
+  <text x="902" y="195" text-anchor="middle" font-size="46" font-weight="800" fill="#f85149">0</text>
+  <text x="902" y="218" text-anchor="middle" font-size="12" fill="#9198a1">fotos no volume</text>
+  <text x="835" y="262" text-anchor="middle" font-size="12" fill="#e6edf3">volumes apagados</text>
+  <text x="835" y="282" text-anchor="middle" font-size="12" fill="#e6edf3">init.sql reexecutado</text>
+  <line x1="300" y1="195" x2="363" y2="195" stroke="#9198a1" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="635" y1="195" x2="698" y2="195" stroke="#9198a1" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="500" y="346" text-anchor="middle" font-size="12" fill="#9198a1">Evidências 08, 14 e 19 em docs/evidencias/</text>
+</svg>

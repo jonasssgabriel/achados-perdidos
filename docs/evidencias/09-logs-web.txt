@@ -1,0 +1,4 @@
+web-1  | [2026-10-19 18:26:31 +0000] [1] [INFO] Starting gunicorn 23.0.0
+web-1  | [2026-10-19 18:26:31 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+web-1  | [2026-10-19 18:26:31 +0000] [1] [INFO] Using worker: sync
+web-1  | [2026-10-19 18:26:31 +0000] [7] [INFO] Booting worker with pid: 7

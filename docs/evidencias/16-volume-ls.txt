@@ -1,0 +1,12 @@
+DRIVER    VOLUME NAME
+local     5e72d213adba68caccd6f33ce6c97518d7182a7a762791e44dac7b70c456a0a9
+local     83ed261faeb5b1fe04f4067f9bcdff14477030c2acd941c45b864a208b1b8134
+local     34424d767e5379bbac3680f6e2e1009f5f9eafc418384c6b59bc244c0818d2da
+local     361831c7ca169641c518805f6455281990799110ad006a280455f541930b777d
+local     achados-perdidos_dados_banco
+local     achados-perdidos_fotos
+local     compnuvem_media_data
+local     compnuvem_postgres_data
+local     d4dce87b24886a910c098e34a1414eb87cbef9dbba9956bf6a85d45738fe5988
+local     supabase_db_T10-E2E-LOCAL
+local     t10e2elocal_db-data

@@ -1,0 +1,30 @@
+[
+    {
+        "CreatedAt": "2026-10-19T18:26:25Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "4ba06f54269045a91b2e9d6ea8d9837dc0d6f3b74bb1e27ee4f266381031c402",
+            "com.docker.compose.project": "achados-perdidos",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "dados_banco"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/achados-perdidos_dados_banco/_data",
+        "Name": "achados-perdidos_dados_banco",
+        "Options": null,
+        "Scope": "local"
+    },
+    {
+        "CreatedAt": "2026-10-19T18:26:25Z",
+        "Driver": "local",
+        "Labels": {
+            "com.docker.compose.config-hash": "f81a00e624dc4820542b31045a72ca847fa9f7f231f810f740569750675af6fa",
+            "com.docker.compose.project": "achados-perdidos",
+            "com.docker.compose.version": "5.5.1",
+            "com.docker.compose.volume": "fotos"
+        },
+        "Mountpoint": "/var/lib/docker/volumes/achados-perdidos_fotos/_data",
+        "Name": "achados-perdidos_fotos",
+        "Options": null,
+        "Scope": "local"
+    }
+]

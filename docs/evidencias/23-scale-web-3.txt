@@ -1,0 +1,10 @@
+ Container achados-perdidos-db-1 Running 
+ Container achados-perdidos-web-1 Running 
+ Container achados-perdidos-web-3 Creating 
+ Container achados-perdidos-web-2 Creating 
+ Container achados-perdidos-web-2 Created 
+ Container achados-perdidos-web-3 Created 
+ Container achados-perdidos-db-1 Waiting 
+ Container achados-perdidos-db-1 Healthy 
+ Container achados-perdidos-web-3 Starting 
+Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint achados-perdidos-web-3 (26567c61f95416baa92fff8aa36e63227386f379f398718e8538e71588e805be): Bind for 0.0.0.0:8080 failed: port is already allocated

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" role="img" aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Arquitetura do Achados &amp; Perdidos</title>
+  <desc id="d">O navegador acessa o serviço web pela porta 8080. Web e db compartilham a rede interna. O db não tem porta publicada. Os volumes fotos e dados_banco guardam os dados; o init.sql é montado somente leitura no db.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9198a1"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d29922"/></marker>
+  </defs>
+  <rect width="1000" height="600" rx="16" fill="#0d1117"/>
+
+  <!-- cliente -->
+  <rect x="24" y="170" width="150" height="90" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <text x="99" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#e6edf3">Navegador</text>
+  <text x="99" y="226" text-anchor="middle" font-size="15" font-weight="700" fill="#e6edf3">ou curl</text>
+  <text x="99" y="246" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">localhost:8080</text>
+
+  <!-- host -->
+  <rect x="214" y="30" width="764" height="548" rx="16" fill="#161b22" stroke="#30363d" stroke-width="2"/>
+  <text x="236" y="58" font-size="13" font-weight="700" letter-spacing="1" fill="#9198a1">HOST · DOCKER DESKTOP</text>
+
+  <!-- rede -->
+  <rect x="236" y="78" width="720" height="262" rx="14" fill="#0c1a2e" stroke="#4493f8" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="256" y="104" font-size="14" font-weight="700" fill="#4493f8">rede_interna</text>
+  <text x="352" y="104" font-size="12" fill="#9198a1">bridge definida pelo usuário · DNS interno: o nome  db  vira o IP do contêiner</text>
+
+  <!-- web -->
+  <rect x="270" y="130" width="250" height="160" rx="12" fill="#0d1117" stroke="#4493f8" stroke-width="2"/>
+  <text x="395" y="164" text-anchor="middle" font-size="20" font-weight="800" fill="#e6edf3">web</text>
+  <text x="395" y="190" text-anchor="middle" font-size="14" fill="#e6edf3">Flask + Gunicorn</text>
+  <text x="395" y="214" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">escuta 0.0.0.0:5000</text>
+  <text x="395" y="236" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">usuário: appuser (não é root)</text>
+  <text x="395" y="262" text-anchor="middle" font-size="12" fill="#e6edf3">publicada: <tspan font-weight="700" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace">8080 → 5000</tspan></text>
+
+  <!-- db -->
+  <rect x="680" y="130" width="250" height="160" rx="12" fill="#0d1117" stroke="#4493f8" stroke-width="2"/>
+  <text x="805" y="164" text-anchor="middle" font-size="20" font-weight="800" fill="#e6edf3">db</text>
+  <text x="805" y="190" text-anchor="middle" font-size="14" fill="#e6edf3">PostgreSQL 16</text>
+  <text x="805" y="214" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">postgres:16-alpine · :5432</text>
+  <text x="805" y="236" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">healthcheck: pg_isready</text>
+  <text x="805" y="262" text-anchor="middle" font-size="12" font-weight="700" fill="#f85149">sem porta publicada no host</text>
+
+  <!-- setas principais -->
+  <line x1="174" y1="215" x2="268" y2="215" stroke="#9198a1" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="221" y="205" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">HTTP</text>
+  <line x1="520" y1="215" x2="678" y2="215" stroke="#9198a1" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="599" y="203" text-anchor="middle" font-size="12" fill="#e6edf3">SQL</text>
+  <text x="599" y="240" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">host=db :5432</text>
+
+  <!-- volumes -->
+  <line x1="395" y1="290" x2="395" y2="398" stroke="#3fb950" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="805" y1="290" x2="805" y2="398" stroke="#3fb950" stroke-width="2.5" marker-end="url(#ar)"/>
+  
+  <path d="M310,412 v76 a85.0,12 0 0 0 170,0 v-76" fill="#0f2d1a" stroke="#3fb950" stroke-width="2"/>
+  <ellipse cx="395.0" cy="412" rx="85.0" ry="12" fill="#0f2d1a" stroke="#3fb950" stroke-width="2"/>
+  <text x="395.0" y="446" text-anchor="middle" font-size="16" font-weight="700" fill="#56d364">fotos</text>
+  <text x="395.0" y="466" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">/app/uploads</text>
+  
+  <path d="M720,412 v76 a85.0,12 0 0 0 170,0 v-76" fill="#0f2d1a" stroke="#3fb950" stroke-width="2"/>
+  <ellipse cx="805.0" cy="412" rx="85.0" ry="12" fill="#0f2d1a" stroke="#3fb950" stroke-width="2"/>
+  <text x="805.0" y="446" text-anchor="middle" font-size="16" font-weight="700" fill="#56d364">dados_banco</text>
+  <text x="805.0" y="466" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">/var/lib/postgresql/data</text>
+  <text x="395" y="528" text-anchor="middle" font-size="12" fill="#9198a1">volume nomeado · fotos enviadas</text>
+  <text x="805" y="528" text-anchor="middle" font-size="12" fill="#9198a1">volume nomeado · dados do PostgreSQL</text>
+
+  <!-- init.sql -->
+  <rect x="520" y="418" width="170" height="64" rx="10" fill="#2d2200" stroke="#d29922" stroke-width="2"/>
+  <text x="605" y="444" text-anchor="middle" font-size="14" font-weight="700" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#e3b341">db/init.sql</text>
+  <text x="605" y="464" text-anchor="middle" font-size="11" fill="#e3b341">bind mount · somente leitura (:ro)</text>
+  <path d="M605,418 V318 H730 V292" fill="none" stroke="#d29922" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+  <text x="615" y="366" font-size="11" fill="#e3b341">roda só com o banco vazio</text>
+  <text x="615" y="381" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#9198a1">/docker-entrypoint-initdb.d/</text>
+
+  <text x="236" y="560" font-size="12" fill="#9198a1">Os volumes sobrevivem ao  docker compose down.  Só  down -v  os remove.</text>
+</svg>

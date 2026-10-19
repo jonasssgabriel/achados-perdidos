@@ -1,0 +1,9 @@
+# segredos: nunca versionar
+.env
+
+# imagem usada só para testar o upload (qualquer imagem serve)
+/oculos.png
+
+# lixo do Python
+__pycache__/
+*.pyc
