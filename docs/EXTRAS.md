@@ -65,4 +65,20 @@ O `proxy_pass http://web:5000` usa o nome do serviço, resolvido pelo DNS da `re
 | `31-nginx-health-header.txt` | `Server: nginx/1.31.7` na resposta do `/health`: passou pelo proxy |
 | `32-nginx-estatisticas.txt` | Cadastro com foto pelo proxy: 5 itens e 2 fotos |
 
+### Página de teste (`nginx/site/index.html`)
+
+No modo nginx, abrir `http://localhost:8080/` mostra uma página web que usa a própria API: indica se a API está conectada ao banco (`/health`), mostra as estatísticas (`/estatisticas`), lista os objetos com foto (`/itens` e `/fotos/<nome>`), filtra por local (`/itens?local=`, também por atalhos, um por local cadastrado) e cadastra objetos pelo formulário (`POST /itens`).
+
+Ao lado do título há um terminal que registra cada requisição feita pela página como o comando `curl` equivalente, com o status HTTP, o tempo e um trecho da resposta. Cada comando vem com um comentário dizendo qual função do `app.py` o atende (por exemplo `listar()` para `GET /itens`), e clicar no comando o copia para rodar num terminal de verdade.
+
+- É um único arquivo HTML, com CSS e JavaScript dentro, sem biblioteca nem fonte externa. Funciona sem internet.
+- O nginx entrega o arquivo só na raiz exata (`location = /`); todas as outras rotas continuam indo para a API. Por isso a página chama a API no mesmo endereço, e o navegador não bloqueia por CORS. O `app.py` não foi alterado.
+- O texto vindo do banco entra na página por `textContent`, e não por `innerHTML`, para uma descrição com HTML não ser executada.
+- O banco grava `criado_em` em UTC, sem fuso; a página converte para o horário do navegador.
+- O arquivo é montado no `nginx` como bind mount somente leitura (`./nginx/site:/usr/share/nginx/html:ro`).
+
+| Evidência | O que mostra |
+|---|---|
+| `33-pagina-web.jpg` | A página com a API conectada, 5 itens e 2 fotos, os atalhos de filtro e o terminal com os comandos `curl` de `/health`, `/estatisticas` e `/itens` |
+
 O diagrama atualizado está em [`arquitetura.md`](arquitetura.md).

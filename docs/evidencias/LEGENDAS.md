@@ -36,3 +36,4 @@ Cada arquivo desta pasta é a saída real de um comando executado neste ambiente
 | `30-nginx-ps.txt` | Bônus nginx | Só o `nginx` publica porta (`8080->80`); `web` e `db` sem porta no host |
 | `31-nginx-health-header.txt` | Bônus nginx | `curl -i /health` com `Server: nginx/1.31.7`: a resposta passou pelo proxy |
 | `32-nginx-estatisticas.txt` | Bônus nginx | Cadastro de foto através do proxy: 5 itens no banco e 2 fotos no volume |
+| `33-pagina-web.jpg` | Bônus nginx | Página de teste em `localhost:8080` servida pelo nginx: API conectada, 5 itens, 2 fotos, atalhos de filtro e terminal com os `curl` equivalentes |

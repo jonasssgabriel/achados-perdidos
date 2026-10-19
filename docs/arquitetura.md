@@ -66,6 +66,8 @@ flowchart LR
     sql -. "só com o banco vazio" .-> db
 ```
 
+Neste modo o nginx também entrega a página de teste (`nginx/site/index.html`) na rota `/`, montada como bind mount somente leitura em `/usr/share/nginx/html`. As demais rotas seguem para o `web`.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="img/arquitetura-nginx-dark.svg">
   <img alt="Diagrama de arquitetura com nginx na frente do web" src="img/arquitetura-nginx-light.svg" width="100%">

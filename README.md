@@ -174,6 +174,7 @@ Os três desafios bônus da prova estão feitos e documentados em [`docs/EXTRAS.
 | Adminer, painel do banco, num profile | `docker compose --profile debug up -d` e abrir `localhost:8081` | 24 a 26 |
 | Backup e restauração do volume `fotos` em `.tar.gz` | Contêiner temporário com `docker run --rm` | 27 a 29 |
 | nginx na frente do `web`, que deixa de publicar porta | `docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d` | 30 a 32 |
+| Página web de teste, servida pelo nginx (lista, filtro, cadastro com foto e terminal que mostra o `curl` de cada ação) | Com o nginx no ar, abrir `http://localhost:8080/` | 33 |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/img/arquitetura-nginx-dark.svg">
@@ -215,13 +216,15 @@ achados-perdidos/
 ├── db/
 │   └── init.sql            # cria a tabela itens e 3 exemplos (fornecido)
 ├── nginx/
-│   └── default.conf        # configuração do proxy reverso (extra)
+│   ├── default.conf        # configuração do proxy reverso (extra)
+│   └── site/index.html     # página web de teste da API (extra)
 ├── docs/
 │   ├── img/                # diagramas em SVG (claro e escuro)
 │   ├── evidencias/         # saídas reais dos testes, com legenda
 │   ├── arquitetura.md      # diagrama de arquitetura em Mermaid e SVG
 │   ├── RELATORIO.md        # relatório técnico
 │   ├── REFLEXAO.md         # questões de reflexão e equivalência em nuvem
+│   ├── ROTEIRO-DEMO.md     # sequência de comandos para demonstrar o ambiente
 │   └── EXTRAS.md           # desafios bônus: Adminer, backup e nginx
 ├── docker-compose.yml      # orquestração: serviços, rede, volumes
 ├── docker-compose.nginx.yml # sobreposição que põe o nginx na frente (extra)

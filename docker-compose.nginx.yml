@@ -8,6 +8,7 @@ services:
       - "8080:80"
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/site:/usr/share/nginx/html:ro
     depends_on:
       - web
     networks:
