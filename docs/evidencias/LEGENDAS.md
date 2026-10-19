@@ -27,3 +27,12 @@ Cada arquivo desta pasta é a saída real de um comando executado neste ambiente
 | `21-ls-fotos-apos-down-v.txt` | 5.3 | `ls -l /app/uploads` depois de `down -v`: pasta de fotos vazia (`total 0`) |
 | `22-up-sequencia.txt` | Q4 | Saída do `docker compose up -d`: o `db` fica `Healthy` antes do `web` iniciar |
 | `23-scale-web-3.txt` | Q7 | `docker compose up -d --scale web=3` falha: `Bind for 0.0.0.0:8080 failed: port is already allocated` |
+| `24-adminer-profile-debug.txt` | Bônus Adminer | `docker compose --profile debug ps`: com o profile aparecem `adminer`, `db` e `web` |
+| `25-sem-profile-so-web-db.txt` | Bônus Adminer | `docker compose ps` sem o profile: o Adminer não existe, só `db` e `web` |
+| `26-adminer-tabela-itens.png` | Bônus Adminer | Adminer em `localhost:8081` conectado ao `db`, mostrando a tabela `itens` |
+| `27-backup-origem-ls.txt` | Bônus backup | `ls -l` do volume `fotos` original: 1 foto de 17.938 bytes |
+| `28-backup-arquivo.txt` | Bônus backup | `dir backup`: o arquivo `fotos.tar.gz` com 18.109 bytes |
+| `29-restauracao-ls.txt` | Bônus backup | `ls -l` do volume novo `fotos_restaurado`: a mesma foto, com o mesmo tamanho |
+| `30-nginx-ps.txt` | Bônus nginx | Só o `nginx` publica porta (`8080->80`); `web` e `db` sem porta no host |
+| `31-nginx-health-header.txt` | Bônus nginx | `curl -i /health` com `Server: nginx/1.31.7`: a resposta passou pelo proxy |
+| `32-nginx-estatisticas.txt` | Bônus nginx | Cadastro de foto através do proxy: 5 itens no banco e 2 fotos no volume |

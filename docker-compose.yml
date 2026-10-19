@@ -36,6 +36,21 @@ services:
     networks:
       - rede_interna
     restart: unless-stopped
+  
+
+  adminer:
+    image: adminer:latest
+    profiles: ["debug"]
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    ports:
+      - "8081:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - rede_interna
+    restart: unless-stopped
 
 volumes:
   dados_banco:
@@ -45,3 +60,5 @@ volumes:
 networks:
   rede_interna:
     driver: bridge
+
+

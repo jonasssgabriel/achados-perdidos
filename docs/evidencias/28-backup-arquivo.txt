@@ -1,0 +1,10 @@
+ O volume na unidade C n∆o tem nome.
+ O N£mero de SÇrie do Volume Ç 6C12-1A8F
+
+ Pasta de C:\Users\jonas\Documents\PROVA NUVEM\achados-perdidos\backup
+
+19/10/2026  17:42    <DIR>          .
+19/10/2026  17:42    <DIR>          ..
+19/10/2026  17:42            18.109 fotos.tar.gz
+               1 arquivo(s)         18.109 bytes
+               2 pasta(s)   203.693.379.584 bytes dispon°veis

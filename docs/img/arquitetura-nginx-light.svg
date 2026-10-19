@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" role="img" aria-labelledby="t d" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Arquitetura com nginx na frente do web</title>
+  <desc id="d">O navegador acessa o nginx pela porta 8080. O nginx repassa para o web pela rede interna. Web e db não publicam porta no host. Os volumes fotos e dados_banco guardam os dados; init.sql e default.conf são montados somente leitura.</desc>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#59636e"/></marker>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9a6700"/></marker>
+  </defs>
+  <rect width="1000" height="600" rx="16" fill="#ffffff"/>
+
+  <rect x="24" y="170" width="150" height="90" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="2"/>
+  <text x="99" y="206" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">Navegador</text>
+  <text x="99" y="226" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328">ou curl</text>
+  <text x="99" y="246" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">localhost:8080</text>
+
+  <rect x="214" y="30" width="764" height="548" rx="16" fill="#f6f8fa" stroke="#d0d7de" stroke-width="2"/>
+  <text x="236" y="58" font-size="13" font-weight="700" letter-spacing="1" fill="#59636e">HOST · DOCKER DESKTOP</text>
+
+  <rect x="236" y="78" width="720" height="262" rx="14" fill="#eef6ff" stroke="#0969da" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="256" y="104" font-size="14" font-weight="700" fill="#0969da">rede_interna</text>
+  <text x="352" y="104" font-size="12" fill="#59636e">bridge definida pelo usuário · DNS interno resolve web e db</text>
+
+  
+  <rect x="256" y="140" width="200" height="150" rx="12" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="356.0" y="174" text-anchor="middle" font-size="19" font-weight="800" fill="#1f2328">nginx</text>
+  <text x="356.0" y="198" text-anchor="middle" font-size="13" fill="#1f2328">proxy reverso</text>
+  <text x="356.0" y="222" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">nginx:alpine · :80</text>
+  <text x="356.0" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2328">publicada: 8080 → 80</text>
+  
+  <rect x="490" y="140" width="200" height="150" rx="12" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="590.0" y="174" text-anchor="middle" font-size="19" font-weight="800" fill="#1f2328">web</text>
+  <text x="590.0" y="198" text-anchor="middle" font-size="13" fill="#1f2328">Flask + Gunicorn · appuser</text>
+  <text x="590.0" y="222" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">escuta 0.0.0.0:5000</text>
+  <text x="590.0" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#cf222e">sem porta no host</text>
+  
+  <rect x="724" y="140" width="210" height="150" rx="12" fill="#ffffff" stroke="#0969da" stroke-width="2"/>
+  <text x="829.0" y="174" text-anchor="middle" font-size="19" font-weight="800" fill="#1f2328">db</text>
+  <text x="829.0" y="198" text-anchor="middle" font-size="13" fill="#1f2328">PostgreSQL 16</text>
+  <text x="829.0" y="222" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">postgres:16-alpine · :5432</text>
+  <text x="829.0" y="248" text-anchor="middle" font-size="12" font-weight="700" fill="#cf222e">sem porta no host</text>
+
+  <line x1="174" y1="215" x2="254" y2="215" stroke="#59636e" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="214" y="205" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">HTTP</text>
+  <line x1="456" y1="215" x2="488" y2="215" stroke="#59636e" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="690" y1="215" x2="722" y2="215" stroke="#59636e" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="473" y="318" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">proxy_pass web:5000</text>
+  <text x="706" y="318" text-anchor="middle" font-size="11" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">host=db</text>
+
+  <line x1="590" y1="290" x2="590" y2="398" stroke="#1a7f37" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="775" y1="290" x2="775" y2="398" stroke="#1a7f37" stroke-width="2.5" marker-end="url(#ar)"/>
+  
+  <path d="M515,412 v76 a75.0,12 0 0 0 150,0 v-76" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <ellipse cx="590.0" cy="412" rx="75.0" ry="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <text x="590.0" y="446" text-anchor="middle" font-size="16" font-weight="700" fill="#116329">fotos</text>
+  <text x="590.0" y="466" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">/app/uploads</text>
+  
+  <path d="M700,412 v76 a75.0,12 0 0 0 150,0 v-76" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <ellipse cx="775.0" cy="412" rx="75.0" ry="12" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+  <text x="775.0" y="446" text-anchor="middle" font-size="16" font-weight="700" fill="#116329">dados_banco</text>
+  <text x="775.0" y="466" text-anchor="middle" font-size="12" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#59636e">/var/lib/postgresql</text>
+  <text x="590" y="528" text-anchor="middle" font-size="12" fill="#59636e">volume nomeado</text>
+  <text x="775" y="528" text-anchor="middle" font-size="12" fill="#59636e">volume nomeado</text>
+
+  <rect x="256" y="418" width="200" height="64" rx="10" fill="#fff8c5" stroke="#9a6700" stroke-width="2"/>
+  <text x="356" y="444" text-anchor="middle" font-size="13" font-weight="700" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#7d4e00">nginx/default.conf</text>
+  <text x="356" y="464" text-anchor="middle" font-size="11" fill="#7d4e00">bind mount · somente leitura</text>
+  <line x1="356" y1="418" x2="356" y2="292" stroke="#9a6700" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+
+  <rect x="868" y="418" width="100" height="64" rx="10" fill="#fff8c5" stroke="#9a6700" stroke-width="2"/>
+  <text x="918" y="444" text-anchor="middle" font-size="13" font-weight="700" font-family="ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace" fill="#7d4e00">db/init.sql</text>
+  <text x="918" y="464" text-anchor="middle" font-size="11" fill="#7d4e00">bind · :ro</text>
+  <line x1="918" y1="418" x2="918" y2="292" stroke="#9a6700" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ab)"/>
+
+  <text x="236" y="560" font-size="12" fill="#59636e">Só o nginx tem porta publicada. Arquivo: docker-compose.nginx.yml somado ao docker-compose.yml.</text>
+</svg>

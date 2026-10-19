@@ -4,6 +4,9 @@
 # imagem usada só para testar o upload (qualquer imagem serve)
 /oculos.png
 
+# cópia de segurança do volume fotos (contém fotos de teste)
+/backup/
+
 # lixo do Python
 __pycache__/
 *.pyc
