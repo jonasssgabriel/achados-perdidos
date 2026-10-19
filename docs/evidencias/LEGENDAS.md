@@ -4,6 +4,7 @@ Cada arquivo desta pasta é a saída real de um comando executado neste ambiente
 
 | Arquivo | Tarefa | Legenda |
 |---|---|---|
+| `34-up-build.txt` | 4 | Saída do `docker compose up -d --build`: a imagem do `web` construída a partir do Dockerfile e o `db` `Healthy` com o `web` em execução |
 | `01-compose-ps.txt` | 4 | `docker compose ps`: `db` com status `healthy` e `web` em execução com a porta `8080->5000`; o `db` mostra só `5432/tcp`, sem porta publicada no host |
 | `02-health.txt` | 4 (RF01) | `GET /health` responde `status: ok` e `banco: conectado` |
 | `03-itens.txt` | 4 (RF02) | `GET /itens` lista os 3 itens de exemplo criados pelo `init.sql` |

@@ -1,0 +1,59 @@
+ Image achados-perdidos-web Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 585B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 380B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 0.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 65B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 DONE 0.0s
+
+#6 [1/6] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#6 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.0s done
+#6 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 2.92kB done
+#5 DONE 0.0s
+
+#7 [2/6] WORKDIR /app
+#7 CACHED
+
+#8 [4/6] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/6] COPY . .
+#9 CACHED
+
+#10 [3/6] COPY requirements.txt .
+#10 CACHED
+
+#11 [6/6] RUN mkdir -p /app/uploads     && useradd --system --no-create-home appuser     && chown -R appuser:appuser /app
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:ce36d9766039e39c1d3522684a68618c17d247bff011404e77a7129d664eecae done
+#12 exporting config sha256:bf26c35ea94c9b5673cc79fc597f3d5cc25205cb09fdd4ce2d9bec83ed6d567d done
+#12 exporting attestation manifest sha256:5ac127530c85f6522f93c3a29df406922476cdb64de43b66847faa735cd2fc89 0.0s done
+#12 exporting manifest list sha256:2addb98ddec2aaf14db83ab5cd7a6e6e3d56940ffe7777ceff814c0747a5702d 0.0s done
+#12 naming to docker.io/library/achados-perdidos-web:latest done
+#12 unpacking to docker.io/library/achados-perdidos-web:latest 0.0s done
+#12 DONE 0.1s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+ Image achados-perdidos-web Built 
+ Container achados-perdidos-web-1 Running 
+ Container achados-perdidos-db-1 Running 
+ Container achados-perdidos-db-1 Waiting 
+ Container achados-perdidos-db-1 Healthy 
