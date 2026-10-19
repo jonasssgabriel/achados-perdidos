@@ -59,7 +59,7 @@ O comando falha. Na evidência `23-scale-web-3.txt`, o Compose cria as réplicas
 | Arquivo `.env` (segredos) | Azure Key Vault | AWS Secrets Manager | Secret Manager |
 | Imagem construída localmente | Azure Container Registry | Amazon ECR | Artifact Registry |
 
-> Observação: esta tabela é conhecimento complementar, não vem dos slides. Confirmar com o material da disciplina.
+Os serviços de armazenamento de objetos, banco relacional e rede virtual seguem o mapa de equivalência do Encontro 1 (slide 36) e o Encontro 4 (objeto, bloco e arquivo). Para o contêiner, os segredos e o registro de imagens usei a documentação de cada provedor, porque esses serviços não aparecem no mapa dos slides.
 
 ### Qual peça muda mais ao migrar, e por quê
 
