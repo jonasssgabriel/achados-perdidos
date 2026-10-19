@@ -10,7 +10,7 @@ API de objetos perdidos em Flask e PostgreSQL, empacotada com Docker Compose.<br
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-23.0.0-499848?style=flat-square&logo=gunicorn&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
-[Subir o ambiente](#subindo-em-um-minuto) ·
+[Subir o ambiente](#passo-a-passo-subir-testar-parar-e-destruir) ·
 [Arquitetura](#arquitetura) ·
 [Decisões](#decisões-de-projeto) ·
 [Persistência](#persistência) ·
@@ -29,15 +29,23 @@ docker compose up -d --build
 
 ---
 
-## O problema
+## Objetivo
+
+Empacotar a aplicação Achados & Perdidos (API Flask com PostgreSQL) em contêineres, para que o comando `docker compose up -d --build` suba o ambiente completo, com os dados persistidos em volumes, e documentar como e por que cada peça funciona.
+
+### O problema
 
 O Setor de Atendimento ao Estudante guardava os objetos perdidos numa planilha compartilhada. Um estagiário escreveu uma aplicação web para substituí-la, mas ela só funcionava no notebook dele: o banco foi instalado à mão, as fotos ficavam numa pasta qualquer do disco e as senhas estavam anotadas num papel.
 
 Este repositório é a primeira etapa da migração para a nuvem: colocar a aplicação e o banco em contêineres, para qualquer pessoa reproduzir o ambiente, e registrar por que cada peça existe, para a próxima equipe migrar sem precisar adivinhar.
 
-## Subindo em um minuto
+## Pré-requisitos
 
-Único pré-requisito: **Docker** (Docker Desktop no Windows e macOS, ou Docker Engine com Compose v2 no Linux).
+Apenas o **Docker** (Docker Desktop no Windows e macOS, ou Docker Engine com Compose v2 no Linux). Nada mais precisa ser instalado.
+
+## Passo a passo: subir, testar, parar e destruir
+
+### Subir e testar
 
 ```bash
 git clone https://github.com/jonasssgabriel/achados-perdidos.git
@@ -64,6 +72,8 @@ Resposta esperada do último comando:
 
 > [!IMPORTANT]
 > O `.env` guarda a senha do banco e **não é versionado** (está no `.gitignore`). O repositório contém só o `.env.example`, com valores fictícios. No PowerShell use `curl.exe`, porque `curl` é um apelido de outro comando.
+
+### Parar e destruir
 
 | Comando | O que acontece | Dados |
 |---|---|---|
